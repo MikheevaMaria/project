@@ -34,8 +34,10 @@ startBtn.addEventListener('click', () => {
     while (isNaN(money) || money == '' || money == null) {
         money = prompt("Ваш бюджет?", "");
     }
+	
     appData.budget = money;
     appData.timeData = time;
+	
     budgetValue.textContent = money.toFixed();
     yearValue.value = new Date(Date.parse(time)).getFullYear();
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
@@ -58,6 +60,7 @@ expensesBtn.addEventListener('click', () => {
         } else {
             i = i - 1;
         }
+	    
         expensesValue.textContent = sum;
     }
 });
@@ -90,7 +93,7 @@ countBtn.addEventListener('click', () => {
 
 incomeItem.addEventListener('input', () => {
     let items = incomeItem.value;
-    console.log(1);
+    
     if (isNaN(items) || items != '') {
         appData.income = items.split(',');
         incomeValue.textContent = appData.income;
@@ -107,10 +110,12 @@ checkSavings.addEventListener("click", () => {
 
 sumValue.addEventListener('input', () => {
     if (appData.savings == true) {
-        let sum = +sumValue.value;
-        let percent = +percentValue.value;
+        let sum = +sumValue.value,
+	    percent = +percentValue.value;
+	    
         appData.monthIncome = sum/100/12*percent;
         appData.yearIncome = sum/100*percent;
+	    
         monthSavingsValue.textContent = appData.monthIncome.toFixed(1);
         yearSavingsValue.textContent = appData.yearIncome.toFixed(1);
     }
@@ -118,10 +123,12 @@ sumValue.addEventListener('input', () => {
 
 percentValue.addEventListener('input', () => {
     if (appData.savings == true) {
-        let sum = +sumValue.value;
-        let percent = +percentValue.value;
+        let sum = +sumValue.value,
+	    percent = +percentValue.value;
+	    
         appData.monthIncome = sum/100/12*percent;
         appData.yearIncome = sum/100*percent;
+	    
         monthSavingsValue.textContent = appData.monthIncome.toFixed(1);
         yearSavingsValue.textContent = appData.yearIncome.toFixed(1);
     }
