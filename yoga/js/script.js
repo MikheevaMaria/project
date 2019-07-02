@@ -171,7 +171,8 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         slides.forEach((item) => item.style.display = 'none');
-        /*for (let i = 0; i < slides.length; i++) {
+        /* ~
+        for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = 'none';
         }*/
         dots.forEach((item) => item.classList.remove('dot-active'));
